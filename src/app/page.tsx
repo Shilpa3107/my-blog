@@ -1,9 +1,7 @@
 // src/app/page.tsx
-
-"use client"; // Enable client-side functionality
-
-import React, { useEffect, useState } from 'react';
+"use client";
 import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 
 interface Post {
   id: number;
@@ -47,7 +45,7 @@ export default function Home() {
               <h2 className="text-2xl font-semibold text-gray-800 mb-2">{post.title}</h2>
               <p className="text-gray-600 mb-4">{post.content.substring(0, 150)}...</p>
               <div className="flex justify-between items-center">
-                <Link href={`/posts/${post.id}`} className="text-blue-600 hover:underline">View Post</Link>
+                <Link href={`/${post.id}`} className="text-blue-600 hover:underline">View Post</Link>
                 <button
                   onClick={() => handleDelete(post.id)}
                   className="text-red-600 hover:underline"
